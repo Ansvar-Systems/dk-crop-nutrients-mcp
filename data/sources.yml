@@ -3,20 +3,62 @@ mcp_name: "Denmark Crop Nutrients MCP"
 category: "domain_intelligence"
 
 sources:
-  # TODO: Add Denmark-specific data sources here.
-  # Example:
-  # - name: "National Agriculture Advisory Service"
-  #   authority: "Ministry of Agriculture"
-  #   official_url: "https://example.gov.de/agriculture"
-  #   retrieval_method: "HTML_SCRAPE"
-  #   format: "HTML"
-  #   authentication: "none"
-  #   update_frequency: "annual"
-  #   license:
-  #     type: "Open Government Licence"
-  #     url: "https://example.gov.de/licence"
-  #   coverage:
-  #     scope: "National agricultural data"
-  #   languages:
-  #     - "de"
-  []
+  - name: "Landbrugsstyrelsen Kvaelstofnormer 2025/26"
+    authority: "Landbrugsstyrelsen (Danish Agricultural Agency)"
+    official_url: "https://lbst.dk/landbrug/goedning/"
+    retrieval_method: "HTML_SCRAPE"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "annual"
+    license:
+      type: "Danish public sector data (PSI directive)"
+      url: "https://lbst.dk/"
+    coverage:
+      scope: "NPK recommendations for all major Danish crops by JB soil group"
+    languages:
+      - "da"
+
+  - name: "SEGES Dyrkningsvejledninger"
+    authority: "SEGES Innovation (Landbrug & Foedevarer)"
+    official_url: "https://www.seges.dk/fagomraader/planteavl"
+    retrieval_method: "HTML_SCRAPE"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "annual"
+    license:
+      type: "SEGES proprietary (summarised under fair use)"
+      url: "https://www.seges.dk/"
+    coverage:
+      scope: "Crop management guides, yield norms, nutrient offtake data"
+    languages:
+      - "da"
+
+  - name: "Aarhus Universitet DCA Jordbundsklassifikation"
+    authority: "Aarhus Universitet, DCA - Nationalt Center for Foedevarer og Jordbrug"
+    official_url: "https://dca.au.dk/"
+    retrieval_method: "PUBLICATION"
+    format: "PDF"
+    authentication: "none"
+    update_frequency: "infrequent"
+    license:
+      type: "Academic publication"
+      url: "https://dca.au.dk/"
+    coverage:
+      scope: "JB 1-12 soil classification system"
+    languages:
+      - "da"
+
+  - name: "SEGES Markedspriser / Copenhagen Grain Exchange"
+    authority: "SEGES Innovation / Koebenhavns Kornboers"
+    official_url: "https://www.seges.dk/fagomraader/oekonomi/markedspriser"
+    retrieval_method: "HTML_SCRAPE"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "weekly"
+    license:
+      type: "SEGES proprietary (summarised under fair use)"
+      url: "https://www.seges.dk/"
+    coverage:
+      scope: "Danish agricultural commodity prices (cereals, oilseeds, root crops)"
+    languages:
+      - "da"

@@ -8,17 +8,17 @@ export interface Meta {
 }
 
 const DISCLAIMER =
-  'This data is provided for informational purposes only. It does not constitute professional ' +
-  'agricultural advice. Always consult a qualified agronomist or FACTS-qualified advisor before ' +
-  'making nutrient management decisions. Data sourced from AHDB RB209, DEFRA, and other UK ' +
-  'government publications under Open Government Licence.';
+  'Data er baseret paa danske kvaelstofnormer og naeringsstofanbefalinger fra Landbrugsstyrelsen, ' +
+  'SEGES og Aarhus Universitet DCA. Kontakt altid din lokale planteavlskonsulent for raadgivning ' +
+  'tilpasset din bedrift. This data is for informational purposes only and does not constitute ' +
+  'professional agricultural advice.';
 
 export function buildMeta(overrides?: Partial<Meta>): Meta {
   return {
     disclaimer: DISCLAIMER,
     data_age: overrides?.data_age ?? 'unknown',
-    source_url: overrides?.source_url ?? 'https://ahdb.org.uk/nutrient-management-guide',
-    copyright: 'Data: Crown Copyright and AHDB. Server: Apache-2.0 Ansvar Systems.',
+    source_url: overrides?.source_url ?? 'https://lbst.dk/landbrug/goedning/',
+    copyright: 'Data: Landbrugsstyrelsen, SEGES, Aarhus Universitet DCA. Server: Apache-2.0 Ansvar Systems.',
     server: 'dk-crop-nutrients-mcp',
     version: '0.1.0',
     ...overrides,

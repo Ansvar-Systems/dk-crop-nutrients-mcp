@@ -2,5 +2,29 @@
   "mcp_name": "Denmark Crop Nutrients MCP",
   "jurisdiction": "DK",
   "build_date": "2026-04-05",
-  "status": "template — data not yet populated"
+  "status": "populated",
+  "data_sources": [
+    "Landbrugsstyrelsen kvaelstofnormer 2025/26",
+    "SEGES Dyrkningsvejledninger",
+    "Aarhus Universitet DCA jordbundsklassifikation",
+    "SEGES markedspriser / Copenhagen Grain Exchange"
+  ],
+  "stats": {
+    "crops": 19,
+    "soil_types": 12,
+    "nutrient_recommendations": 57,
+    "commodity_prices": 11,
+    "fts_entries": 88
+  },
+  "crop_groups": [
+    "Baelgsaed",
+    "Froe",
+    "Groentsager",
+    "Grovfoder",
+    "Kartofler",
+    "Korn",
+    "Oliefroe",
+    "Roer"
+  ],
+  "soil_classification_system": "JB 1-12 (Aarhus Universitet DCA)"
 }

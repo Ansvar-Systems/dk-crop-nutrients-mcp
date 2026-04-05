@@ -1,6 +1,6 @@
 {
   "name": "@ansvar-systems/dk-crop-nutrients-mcp",
-  "mcpName": "io.github.ansvar-systems/uk-crop-nutrients",
+  "mcpName": "io.github.ansvar-systems/dk-crop-nutrients",
   "version": "0.1.0",
   "description": "MCP server for Danish crop nutrient management \u2014 kv\u00e6lstofnormer, g\u00f8dningsregnskab, JB soil classification",
   "type": "module",

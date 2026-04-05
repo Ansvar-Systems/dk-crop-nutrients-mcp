@@ -83,7 +83,7 @@ function initSchema(db: BetterSqlite3.Database): void {
       crop_id TEXT REFERENCES crops(id),
       market TEXT,
       price_per_tonne REAL,
-      currency TEXT DEFAULT 'GBP',
+      currency TEXT DEFAULT 'DKK',
       price_source TEXT NOT NULL,
       published_date TEXT,
       retrieved_at TEXT,
