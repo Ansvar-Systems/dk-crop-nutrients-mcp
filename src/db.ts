@@ -51,7 +51,7 @@ function initSchema(db: BetterSqlite3.Database): void {
       nutrient_offtake_p2o5 REAL,
       nutrient_offtake_k2o REAL,
       growth_stages TEXT,
-      jurisdiction = 'DK'
+      jurisdiction TEXT DEFAULT 'DK'
     );
 
     CREATE TABLE IF NOT EXISTS soil_types (
@@ -75,7 +75,7 @@ function initSchema(db: BetterSqlite3.Database): void {
       s_rec_kg_ha REAL,
       notes TEXT,
       rb209_section TEXT,
-      jurisdiction = 'DK'
+      jurisdiction TEXT DEFAULT 'DK'
     );
 
     CREATE TABLE IF NOT EXISTS commodity_prices (
@@ -88,7 +88,7 @@ function initSchema(db: BetterSqlite3.Database): void {
       published_date TEXT,
       retrieved_at TEXT,
       source TEXT,
-      jurisdiction = 'DK'
+      jurisdiction TEXT DEFAULT 'DK'
     );
 
     CREATE VIRTUAL TABLE IF NOT EXISTS search_index USING fts5(
@@ -102,7 +102,7 @@ function initSchema(db: BetterSqlite3.Database): void {
 
     INSERT OR IGNORE INTO db_metadata (key, value) VALUES ('schema_version', '1.0');
     INSERT OR IGNORE INTO db_metadata (key, value) VALUES ('mcp_name', 'Denmark Crop Nutrients MCP');
-    INSERT OR IGNORE INTO db_metadata (key, value) VALUES ('jurisdiction = 'DK');
+    INSERT OR IGNORE INTO db_metadata (key, value) VALUES ('jurisdiction', 'DK');
   `);
 }
 
