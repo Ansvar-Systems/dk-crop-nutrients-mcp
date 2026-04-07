@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -92,5 +93,11 @@ export function handleGetNutrientPlan(db: Database, args: NutrientPlanArgs) {
     rb209_section: rec.rb209_section,
     notes: rec.notes,
     _meta: buildMeta({ source_url: 'https://lbst.dk/landbrug/goedning/' }),
+    _citation: buildCitation(
+      `DK Nutrient Plan — ${crop.name}`,
+      `Danish nutrient recommendation for ${crop.name}`,
+      'get_nutrient_plan',
+      { crop: args.crop, soil_type: args.soil_type },
+    ),
   };
 }
