@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -25,7 +26,16 @@ export function handleGetSoilClassification(db: Database, args: SoilArgs) {
       return { error: 'not_found', message: `Soil type '${args.soil_type}' not found.` };
     }
 
-    return { ...soil, _meta: buildMeta() };
+    return {
+      ...soil,
+      _meta: buildMeta(),
+      _citation: buildCitation(
+        `DK Soil — ${soil.name}`,
+        `Danish soil classification for ${soil.name}`,
+        'get_soil_classification',
+        { soil_type: args.soil_type },
+      ),
+    };
   }
 
   if (args.texture) {
@@ -42,6 +52,12 @@ export function handleGetSoilClassification(db: Database, args: SoilArgs) {
       results_count: soils.length,
       results: soils,
       _meta: buildMeta(),
+      _citation: buildCitation(
+        `DK Soil Classification`,
+        `Danish soil classification`,
+        'get_soil_classification',
+        { ...(args.soil_type ? { soil_type: args.soil_type } : {}) },
+      ),
     };
   }
 
